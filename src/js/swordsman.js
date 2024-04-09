@@ -1,10 +1,9 @@
-import { Character } from "./character";
+import Character from "./character";
 
-class Swordsman extends Character {
+export default class Swordsman extends Character {
     constructor(name) {
-        super(name, "Swordsman", 40, 10);
+        super(name, "Swordsman");
+        this.attack = 40;
+        this.defence = 10;
     }
 }
-
-const person = new Swordsman("John");
-console.log(person);
