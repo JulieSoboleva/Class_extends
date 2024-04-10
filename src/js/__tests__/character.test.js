@@ -15,17 +15,9 @@ test('check creating object', () => {
 });
 
 test('check name length', () => {
-  try {
-      new Character("Вольфшлегельштайнхаузенбергедорф", "Bowman");
-  } catch (e) {
-      expect(e.message).toBe("Имя должно иметь от 2 до 10 символов");
-  }
+  expect(() => new Character("Вольфшлегельштайнхаузенбергедорф", "Bowman")).toThrow();
 });
 
 test('check person type', () => {
-  try {
-      new Character("Merlin", "Cook", 10, 50);
-  } catch (e) {
-      expect(e.message).toBe("Не корректный тип персонажа");
-  }
+  expect(() => new Character("Merlin", "Cook", 10, 50)).toThrow();
 });
